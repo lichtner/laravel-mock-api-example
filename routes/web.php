@@ -1,5 +1,6 @@
 <?php
 
+use App\HttpMock;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/{resource}/{id?}', function (string $resource, string $id = '') {
+    $api = 'https://jsonplaceholder.typicode.com';
+    $response = HttpMock::get("$api/$resource/$id");
+    return response($response, $response->status());
+});
+
+

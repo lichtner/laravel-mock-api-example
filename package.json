@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "start": "php8.2 artisan serve",
+        "start": "php artisan serve",
         "dev": "vite",
         "build": "vite build"
     },
